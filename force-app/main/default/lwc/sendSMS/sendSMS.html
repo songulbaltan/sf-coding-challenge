@@ -1,0 +1,28 @@
+<template>
+    <div if:true={showSpinner}>
+        <lightning-spinner
+            alternative-text="Loading..." variant="brand">
+        </lightning-spinner>
+    </div>
+    
+    <lightning-card title="Send SMS to Customer" icon-name="standard:sms">
+        <div class="slds-var-p-around_small">
+            <lightning-layout multiple-rows>
+                <lightning-layout-item padding="around-small" size="12" medium-device-size="12" large-device-size="12">
+                    <lightning-input name="toPhoneNo" class="fieldvalidate" type="tel"
+                                     label="To Phone No" required>
+                    </lightning-input><br/>
+                    <lightning-input name="fromPhNumber" class="fieldvalidate" type="tel"
+                                     label="From Phone No" required>
+                    </lightning-input><br/>
+                    <lightning-textarea name="smsBody" label="Sms Body" required class="fieldvalidate">
+                    </lightning-textarea>
+                </lightning-layout-item>
+                <lightning-layout-item size="12" class="slds-var-p-top_small">
+                    <lightning-button class="slds-align_absolute-center" variant="brand" label="Submit"
+                        onclick={sendSMS}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card><br/>
+</template>
